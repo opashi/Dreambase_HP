@@ -12,7 +12,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $input = json_decode(file_get_contents('php://input'), true);
     
     // メール送信先（サイト運営側）
-    $to = 'y_ohashi@dreambase-hikone.jp';
+    $to = 'dreambase.2025.11@gmail.com';
     
     // メール件名
     $subject = 'DreamBase お問い合わせ: ' . $input['subject'];

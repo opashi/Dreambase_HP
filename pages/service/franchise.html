@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>フランチャイズ事業 - DreamBase</title>
+    <link rel="icon" href="../../favicon.ico">
+    <link rel="stylesheet" href="../../css/style.css">
+</head>
+<body>
+    <div id="app">
+        <!-- ナビゲーション -->
+        <nav class="navbar">
+            <div class="container">
+                <div class="logo">
+                    <h1><a href="../../index.html" style="color: white; text-decoration: none;">DreamBase</a></h1>
+                </div>
+                <div class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+                <ul class="nav-menu">
+                    <h1><a href="../../index.html" style="color: white; text-decoration: none;">DreamBase</a></h1>
+                    <li><a href="../../index.html" class="nav-link">HOME</a></li>
+                    <li><a href="../service.html" class="nav-link active">Service</a></li>
+                    <li><a href="../company.html" class="nav-link">Company</a></li>
+                    <li><a href="../staff.html" class="nav-link">Staff</a></li>
+                    <li><a href="../contact.html" class="nav-link">Contact</a></li>
+                </ul>
+            </div>
+        </nav>
+
+        <!-- メインコンテンツ -->
+        <main id="content">
+            <section class="page-section">
+                <div class="container">
+                    <div style="display: flex; gap: 1rem; flex-wrap: wrap; margin-bottom: 2rem;">
+                        <a href="../../index.html" class="btn" style="display: inline-block; background-color: #666;">HOMEへ戻る</a>
+                        <a href="../service.html" class="btn" style="display: inline-block; background-color: #FF8C00;">サービス一覧へ戻る</a>
+                    </div>
+
+                    <h2 class="section-title">フランチャイズ事業</h2>
+
+                    <div class="service-page-hero">
+                        <img src="../../images/services/franchise.svg" alt="フランチャイズ事業のイメージ" class="service-page-hero-image" loading="lazy">
+                    </div>
+
+                    <div class="card service-overview-card">
+                        <h3>事業コンセプト</h3>
+                        <p>DreamBaseの強みである整体・教育・コミュニティ運営のノウハウを活かし、地域に必要とされる拠点づくりを支援します。</p>
+                        <p>開業前の準備だけでなく、開業後の集客、スタッフ育成、運営改善までを一体的にサポートし、安定した経営基盤づくりを目指します。</p>
+                    </div>
+
+                    <h2 class="section-title">拠点マップ</h2>
+                    <div class="card franchise-map-card">
+                        <p class="franchise-map-lead">地図上のピンをクリックまたはタップすると、各拠点の詳細が表示されます。</p>
+                        <div class="franchise-map-wrap">
+                            <div id="franchise-map" class="franchise-map" role="img" aria-label="日本地図とフランチャイズ拠点"></div>
+                        </div>
+
+                        <p class="franchise-map-note">拠点の追加・変更は、このファイル内のlocations配列を編集してください。</p>
+                        <div id="franchise-detail-list" class="franchise-detail-list"></div>
+                    </div>
+
+                    <h2 class="section-title">サポート内容</h2>
+                    <div class="card-grid">
+                        <div class="card">
+                            <img src="../../images/cards/franchise-opening.svg" alt="開業準備サポートのイメージ" class="detail-card-image" loading="lazy">
+                            <h3>開業準備サポート</h3>
+                            <p>エリア選定、物件相談、初期設計、導入計画の作成など、スタート時に必要な準備を伴走支援します。</p>
+                        </div>
+                        <div class="card">
+                            <img src="../../images/cards/franchise-operations.svg" alt="運営支援プログラムのイメージ" class="detail-card-image" loading="lazy">
+                            <h3>運営支援プログラム</h3>
+                            <p>日々のオペレーション設計、売上管理、顧客対応の標準化を通じて、再現性の高い運営を実現します。</p>
+                        </div>
+                        <div class="card">
+                            <img src="../../images/cards/franchise-training.svg" alt="人材育成教育のイメージ" class="detail-card-image" loading="lazy">
+                            <h3>人材育成・教育</h3>
+                            <p>施術スキルと接客スキルの両面を育成する研修を提供し、店舗力を底上げします。</p>
+                        </div>
+                        <div class="card">
+                            <img src="../../images/cards/franchise-branding.svg" alt="集客ブランディングのイメージ" class="detail-card-image" loading="lazy">
+                            <h3>集客・ブランディング</h3>
+                            <p>Web導線、紹介施策、地域連携を組み合わせ、継続的に集客できる体制づくりを支援します。</p>
+                        </div>
+                    </div>
+
+                    <div class="card" style="margin-top: 3rem;">
+                        <h3>資料請求・ご相談</h3>
+                        <p>フランチャイズ制度の詳細、加盟条件、サポート体制についてはお気軽にお問い合わせください。</p>
+                        <a href="../contact.html" class="btn" style="margin-top: 1rem;">お問い合わせする</a>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <!-- フッター -->
+        <footer class="footer">
+            <div class="container">
+                <p>&copy; 2026 DreamBase. All rights reserved.</p>
+            </div>
+        </footer>
+    </div>
+
+    <script src="../../js/navigation.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const GOOGLE_MAPS_API_KEY = 'AIzaSyDbk1PFRI4fR1uEhMNUsc7lwGD8E83djuk';
+            const detailListEl = document.getElementById('franchise-detail-list');
+            const mapEl = document.getElementById('franchise-map');
+            let activeLocation = null;
+            let map = null;
+            const markerMap = {};
+            const FOCUS_ZOOM_LEVEL = 10;
+
+            // 拠点の追加・変更はこの配列だけを編集すれば、地図ピンと詳細表示に反映されます。
+            const locations = [
+                {
+                    key: 'hikone',
+                    name: 'DreamBase彦根院',
+                    lat: 35.27130837265208,
+                    lng: 136.2370472866469,
+                    address: '滋賀県彦根市平田町378-1',
+                    website: 'https://www.dreambase-hikone.jp',
+                    phone: '070-3152-1404',
+                    description: '滋賀エリアの新規加盟候補者向け相談窓口。地域需要を踏まえた店舗運営モデルを準備中です。'
+                },
+                {
+                    key: 'higashiohmi',
+                    name: 'まい整体院',
+                    lat: 35.02087314166753,
+                    lng: 135.93404270380293,
+                    address: '滋賀県東近江市垣見町588-1',
+                    website: 'https://mai-seitaiin.com',
+                    phone: '070-3152-1364',
+                    description: '東近江エリアの加盟候補者向け個別相談を実施。地域密着型の店舗運営ノウハウを共有し、成功事例を積み上げています。'
+                },
+                {
+                    key: 'suita',
+                    name: '吹田おばた整体院',
+                    lat: 34.783270660224915,
+                    lng: 135.52237404023077,
+                    address: '大阪府吹田市高浜町９−７ 高浜ビル ２階',
+                    website: 'https://www.suitatakahama.com/',
+                    phone: '06-6319-8087',
+                    description: '関西エリアでの加盟希望者サポートを担当。地域連携型のプロモーション施策を展開予定です。'
+                },
+                {
+                    key: 'itami',
+                    name: 'DreamBase伊丹院',
+                    lat: 34.82558852694217,
+                    lng: 135.41659527025925,
+                    address: '兵庫県伊丹市南本町７丁目１−１２',
+                    website: 'https://utage-system.com/p/OF66537sa9BR',
+                    phone: '080-5310-9710',
+                    description: '兵庫エリアの加盟候補者向け個別相談を実施。地域特性に合わせた店舗運営戦略の策定を支援しています。'
+                },
+                {
+                    key: 'takaraduka',
+                    name: 'DreamBase宝塚院',
+                    lat: 34.80241475142676,
+                    lng: 135.34454279337533,
+                    address: '兵庫県宝塚市南口1-14-25 加藤マンション101号室',
+                    website: 'https://www.dreambase.online/',
+                    phone: '070-3152-1392',
+                    description: '兵庫エリアの加盟候補者向け個別相談会を実施。多店舗展開に向けた運営支援体制を整備中です。'
+                }
+            ];
+
+            function renderDetails() {
+                if (!detailListEl) {
+                    return;
+                }
+
+                detailListEl.innerHTML = locations.map(function(location) {
+                    return [
+                        '<section id="franchise-detail-' + location.key + '" class="franchise-detail" aria-hidden="true">',
+                        '<div class="franchise-detail-head">',
+                        '<h3>' + location.name + '</h3>',
+                        '<div class="franchise-detail-switch" aria-label="院詳細の切り替え">',
+                        '<button type="button" class="franchise-switch-btn" data-direction="prev" data-key="' + location.key + '" aria-label="前の院">&lt;</button>',
+                        '<button type="button" class="franchise-switch-btn" data-direction="next" data-key="' + location.key + '" aria-label="次の院">&gt;</button>',
+                        '</div>',
+                        '</div>',
+                        '<p>' + location.description + '</p>',
+                        '<dl class="franchise-detail-meta">',
+                        '<dt>所在地</dt><dd>' + location.address + '</dd>',
+                        '<dt>Webサイト</dt><dd><a href="' + location.website + '" target="_blank" rel="noopener noreferrer">' + location.website + '</a></dd>',
+                        '<dt>電話番号</dt><dd><a href="tel:' + location.phone.replace(/-/g, '') + '">' + location.phone + '</a></dd>',
+                        '</dl>',
+                        '</section>'
+                    ].join('');
+                }).join('');
+            }
+
+            renderDetails();
+
+            const details = document.querySelectorAll('.franchise-detail');
+            const detailMap = locations.reduce(function(acc, location) {
+                acc[location.key] = document.getElementById('franchise-detail-' + location.key);
+                return acc;
+            }, {});
+
+            function closeAll() {
+                details.forEach(function(detail) {
+                    detail.classList.remove('active');
+                    detail.setAttribute('aria-hidden', 'true');
+                });
+
+                Object.keys(markerMap).forEach(function(key) {
+                    markerMap[key].setIcon(getMarkerIcon(false));
+                    markerMap[key].setZIndex(1);
+                });
+
+                activeLocation = null;
+            }
+
+            function getMarkerIcon(isActive) {
+                const size = isActive ? 50 : 36;
+                const anchorY = isActive ? 50 : 36;
+                const fill = isActive ? '#FF8C00' : '#FF6B35';
+                const stroke = isActive ? '#B85E00' : '#A64218';
+                const svg =
+                    '<svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 64 64">' +
+                    '<path d="M32 4c-11.6 0-21 9.4-21 21 0 15.7 21 35 21 35s21-19.3 21-35C53 13.4 43.6 4 32 4z" fill="' + fill + '" stroke="' + stroke + '" stroke-width="2"/>' +
+                    '<circle cx="32" cy="25" r="8" fill="#ffffff"/>' +
+                    '</svg>';
+
+                return {
+                    url: 'data:image/svg+xml;charset=UTF-8,' + encodeURIComponent(svg),
+                    scaledSize: new google.maps.Size(size, size),
+                    anchor: new google.maps.Point(size / 2, anchorY)
+                };
+            }
+
+            function focusMarker(locationKey) {
+                const marker = markerMap[locationKey];
+                if (!marker) {
+                    return;
+                }
+
+                Object.keys(markerMap).forEach(function(key) {
+                    markerMap[key].setIcon(getMarkerIcon(false));
+                    markerMap[key].setZIndex(1);
+                });
+
+                marker.setIcon(getMarkerIcon(true));
+                marker.setZIndex(google.maps.Marker.MAX_ZINDEX + 1);
+
+                if (map) {
+                    const markerPosition = marker.getPosition();
+                    if (markerPosition) {
+                        map.panTo(markerPosition);
+                        if (map.getZoom() < FOCUS_ZOOM_LEVEL) {
+                            map.setZoom(FOCUS_ZOOM_LEVEL);
+                        }
+                    }
+                }
+            }
+
+            function getLocationIndex(locationKey) {
+                return locations.findIndex(function(location) {
+                    return location.key === locationKey;
+                });
+            }
+
+            function openDetail(locationKey, shouldScroll) {
+                const target = detailMap[locationKey];
+
+                closeAll();
+
+                if (target) {
+                    target.classList.add('active');
+                    target.setAttribute('aria-hidden', 'false');
+                    activeLocation = locationKey;
+                    focusMarker(locationKey);
+
+                    if (shouldScroll) {
+                        target.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+                    }
+                }
+            }
+
+            function toggleDetail(locationKey) {
+                const isAlreadyOpen = activeLocation === locationKey;
+
+                if (isAlreadyOpen) {
+                    closeAll();
+                } else {
+                    openDetail(locationKey, true);
+                }
+            }
+
+            if (detailListEl) {
+                detailListEl.addEventListener('click', function(event) {
+                    const switchButton = event.target.closest('.franchise-switch-btn');
+                    if (!switchButton) {
+                        return;
+                    }
+
+                    const currentKey = switchButton.getAttribute('data-key');
+                    const direction = switchButton.getAttribute('data-direction');
+                    const currentIndex = getLocationIndex(currentKey);
+
+                    if (currentIndex === -1) {
+                        return;
+                    }
+
+                    let nextIndex;
+                    if (direction === 'prev') {
+                        nextIndex = currentIndex - 1;
+                    } else {
+                        nextIndex = currentIndex + 1;
+                    }
+
+                    if (nextIndex < 0) {
+                        nextIndex = locations.length - 1;
+                    }
+
+                    if (nextIndex >= locations.length) {
+                        nextIndex = 0;
+                    }
+
+                    openDetail(locations[nextIndex].key, true);
+                });
+            }
+
+            if (!mapEl) {
+                return;
+            }
+
+            function showMapError(message) {
+                mapEl.innerHTML = '<div class="franchise-map-error">' + message + '</div>';
+            }
+
+            window.initFranchiseMap = function() {
+                if (!window.google || !window.google.maps) {
+                    showMapError('Google Mapsの読み込みに失敗しました。時間をおいて再度お試しください。');
+                    return;
+                }
+
+                map = new google.maps.Map(mapEl, {
+                    center: { lat: 35.2, lng: 136.8 },
+                    zoom: 6,
+                    mapTypeControl: false,
+                    streetViewControl: false,
+                    fullscreenControl: true,
+                    gestureHandling: 'cooperative'
+                });
+
+                locations.forEach(function(location) {
+                    const marker = new google.maps.Marker({
+                        position: { lat: location.lat, lng: location.lng },
+                        map: map,
+                        title: location.name,
+                        icon: getMarkerIcon(false),
+                        zIndex: 1
+                    });
+
+                    markerMap[location.key] = marker;
+
+                    marker.addListener('click', function() {
+                        toggleDetail(location.key);
+                    });
+                });
+
+                map.addListener('click', function() {
+                    closeAll();
+                });
+            };
+
+            if (!GOOGLE_MAPS_API_KEY || GOOGLE_MAPS_API_KEY === 'YOUR_GOOGLE_MAPS_API_KEY') {
+                showMapError('Google Maps APIキーを設定すると地図が表示されます。franchise.html内のGOOGLE_MAPS_API_KEYを置き換えてください。');
+                return;
+            }
+
+            const script = document.createElement('script');
+            script.src = 'https://maps.googleapis.com/maps/api/js?key=' + encodeURIComponent(GOOGLE_MAPS_API_KEY) + '&callback=initFranchiseMap';
+            script.async = true;
+            script.defer = true;
+            script.onerror = function() {
+                showMapError('Google Mapsの読み込みに失敗しました。APIキーとリファラー設定を確認してください。');
+            };
+            document.head.appendChild(script);
+        });
+    </script>
+</body>
+</html>

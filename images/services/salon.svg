@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 700" role="img" aria-labelledby="title desc">
+  <title id="title">Online Salon Service</title>
+  <desc id="desc">Illustration representing online learning and community sessions.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#EDF8FF" />
+      <stop offset="100%" stop-color="#D6EFFF" />
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="700" fill="url(#bg)" />
+  <rect x="95" y="95" width="1010" height="510" rx="38" fill="#FFFFFF" opacity="0.94" />
+  <rect x="190" y="170" width="520" height="320" rx="24" fill="#0F2237" />
+  <rect x="220" y="210" width="220" height="18" rx="9" fill="#8FB7DC" />
+  <rect x="220" y="245" width="300" height="16" rx="8" fill="#5D88B2" />
+  <rect x="220" y="276" width="264" height="16" rx="8" fill="#5D88B2" />
+  <circle cx="588" cy="360" r="52" fill="#FF8C00" />
+  <polygon points="570,334 570,386 616,360" fill="#FFFFFF" />
+  <rect x="760" y="182" width="250" height="130" rx="18" fill="#F2F8FF" stroke="#D4E5F7" />
+  <circle cx="808" cy="228" r="24" fill="#88A9C8" />
+  <rect x="846" y="215" width="132" height="12" rx="6" fill="#9FBEDB" />
+  <rect x="846" y="238" width="98" height="10" rx="5" fill="#C6DAED" />
+  <rect x="760" y="338" width="250" height="130" rx="18" fill="#FFF3E8" />
+  <circle cx="808" cy="384" r="24" fill="#FFB37B" />
+  <rect x="846" y="370" width="132" height="12" rx="6" fill="#FFC59D" />
+  <rect x="846" y="393" width="98" height="10" rx="5" fill="#FFDCC6" />
+  <text x="145" y="640" font-family="Segoe UI, Arial, sans-serif" font-size="34" fill="#2E587E">Online Community Learning</text>
+</svg>
